@@ -5,50 +5,60 @@ Alexandrea Teigeler
 
 #--------------------------------------------------------------------------------------------------------------#
 
-Briefly summarize your client, Artemis Financial, and their software requirements: 
-
+Briefly summarize your client, Artemis Financial, and their software requirements 
 
 #--------------------------------------------------------------------------------------------------------------#
 
-1. Who was the client: Artemis Financial, who gives consultations for their customers regarding financial
+1. Who was the client: 
+
+Artemis Financial, who gives consultations for their customers regarding financial
 planning, such as retirement funds, savings accounts, where to invest their captital, and insurance policies.
 
-
 #--------------------------------------------------------------------------------------------------------------#
 
-2. What issue did they want you to address: Artemis Financial needs to keep their clients private information safe, protect their employees personal identifying data, keep their websites application architeture hidden, and database
+2. What issue did they want you to address: 
+
+Artemis Financial needs to keep their clients private information safe, protect their employees personal identifying data, keep their websites application architeture hidden, and database
 from being corrupted and compromised.
 
+#--------------------------------------------------------------------------------------------------------------#
+
+3. Identify their software security vulnerabilities: 
+
+Website applications in particular must develop their security in such a way that can anticipate: 
+
++ SQL Injections -> When untrusted data is added to database queries, changing the structure of the application, and producing unanticipated behaviors; 
+
++ Broken Authentication -> To prevent this, have user sessions timeout, whitelist accepted characters known to be safe for passwords to prevent SQL Injection attakcs, and use Multifactor Authetication to increase the layers of security; 
+
++ IDOR -> Sanitize error messages to prevent exploitation of the websites URL; 
+
++ Input Verification -> verify that returned values are within the legal range, type data safely. Paramaterize every variable; 
+
++ API Interactions -> Spring Framework must support these interactions; 
+
++ Code Quality -> Use industry standards for application develop and best security practices.
 
 #--------------------------------------------------------------------------------------------------------------#
 
-3. Identify their software security vulnerabilities: Website applications in particular must develop their
-security in such a way that can anticipate: SQL Injections -> When untrusted data is added to database queries,
-changing the structure of the application, and producing unanticipated behaviors; Broken Authentication -> To prevent
-this, have user sessions timeout, whitelist accepted characters known to be safe for passwords to prevent SQL
-Injection attakcs, and use Multifactor Authetication to increase the layers of security; IDOR -> Sanitize error
-messages to prevent exploitation of the websites URL; Input Verification -> verify that returned values are within
-the legal range, type data safely. Paramaterize every variable; API Interactions -> Spring Framework must support these interactions; Code Quality -> Use industry standards for application develop and best security practices.
+4. Why is it important to code securely: 
 
+If any of these vulnerabilities were exploited, there could be a loss of capital from the company and the clients, but Artemis Financials good reputation in the public eye would be lost and difficult to recooperate.
 
 #--------------------------------------------------------------------------------------------------------------#
 
-4. Why is it important to code securely: If any of these vulnerabilities were exploited, there could be a loss of
-capital from the company and the clients, but Artemis Financials good reputation in the public eye would be lost and
-difficult to recooperate.
+5. What value does software security add to a company’s overall wellbeing: 
 
-
-#--------------------------------------------------------------------------------------------------------------#
-
-5. What value does software security add to a company’s overall wellbeing:
-
+Software Security protects their assets, such as their finanical capitial, keeps their industry secrets secure which prevents competiters from insight knowledge to their operations, protects their clients private information which provides trust between the company and the client.
 
 #--------------------------------------------------------------------------------------------------------------#
 
 6. What about the process of working through the vulnerability assessment did you find challenging or helpful:
-The most challenging aspect was developing a RESTful API, as it was something I had never done before, as well
-as creating a server and connecting the application to that server, or supressing false positivies. I was unsucessful in parts of this endeavor, and have since continued to practice on these weak point in my skill set, 
-as it is a vital part of my education and career as a computer scientist to be able to understand and put these concepts into practice. I feel that areas of help were the provided tutorials for setting up Maven Dependencies in the pom file.
+
+The most challenging aspect was developing a RESTful API, as it was something I had never done before, as well as creating a server and connecting the application to that server, or supressing false positivies. I was unsucessful in parts of this endeavor, and have since continued to practice on these weak point in my skill set, 
+as it is a vital part of my education and career as a computer scientist to be able to understand and put these concepts into practice. 
+
+I feel that areas of help were the provided tutorials for setting up Maven Dependencies in the pom file.
 
 
 #--------------------------------------------------------------------------------------------------------------#
@@ -97,15 +107,9 @@ After the vulnerabilities had been identified, a mitigation plan was developed t
 
 #--------------------------------------------------------------------------------------------------------------#
 
-8. How did you ensure the code and software application were functional and secure:
+9. How did you ensure the code and software application were functional and secure? After refactoring code, how did you check to see whether you introduced new vulnerabilities:
 
-
-#--------------------------------------------------------------------------------------------------------------#
-
-9. After refactoring code, how did you check to see whether you introduced new vulnerabilities:
-
-Running the Maven Dependency Check again after all false positives and unutilized library warnings were surpressed, illistrated first that the correct dependencies had been surpressed. Secondly, both Dependency Checks were examined to ensure that the list didn't illistrate that new vulnerabilites are risks were introduced.
-
+Running the Maven Dependency Check again after all false positives and unutilized library warnings were surpressed, illistrated first that the correct dependencies had been surpressed. Secondly, both Dependency Checks were examined to ensure that the list didn't illistrate that new vulnerabilites are risks were introduced, proving that the application was secure. Running the application, it was determined that if it run without error and performed as intended, it was fucntional.
 
 #--------------------------------------------------------------------------------------------------------------#
 
@@ -130,8 +134,22 @@ Understanding the inherit risks and vulnerabilities associated with web applicat
 
 What from this particular assignment might you want to showcase to a future employer:
 
-+ Skill Set:
+Skill Set: 
+ 
++ Manual Code inspection ->  To take knowledge about vulnerabilities from the Maven Dependency Check and insecure coding practices, and re-design the code and application in a way that prevents attackers from taking advanatage of these common weaknesses that web applications have. If updating the libraries are not an option, replacing insecure code with safe alternatives is ideal over using insecure code and adding additional structures to the code in order to avoid the vulnerability attack, which can bloat the overall application and run time. 
 
-+ Applicable Knowledge:
++ Maven Dependancy Check -> To edit the pom file of a Maven project. To run a clean install Maven configuration. Running a Maven Dependency Check. To create a surpression file for all codes that need to be surpressed. Updating the correlating libraries that have vulnerabilities associated with them.
 
-+ Learned Experience: 
+Applicable Knowledge:
+
++ Manual Code inspection -> Able to sight read application code. To understand and recognize inherit risks from certain code design and practices. 
+
++ Maven Dependancy Check -> To read the dependency check. Determine which codes are serious vulnerabilities relating to the current application and which libraries would be affected by these codes. Determine which codes are false positives and those that should be surpressed. To know which libraries need to be updated.
+
+Learned Experience: 
+
++ Secure Coding Practices
+
++ DevSecOps
+
++ Taking an issue presented by a client, understanding their industry and how best to suit their needs, applying knowledge of what might be a security concern and drafting up a vulnerability assessment that underscores the importance of each step taken to make their software secure for them and their customers.
